@@ -8,22 +8,22 @@ import Link from "next/link";
 const blowMouldingMachines = [
   {
     name: "HDPE Blow Moulding Machine",
-    path: "/home/p1.png",
+    path: "/home/p1.webp",
     slug: "/hdpe-blow-moulding-machine",
   },
   {
     name: "Plastic Blow Moulding Machine",
-    path: "/home/p2.png",
+    path: "/home/p2.webp",
     slug: "/plastic-blow-moulding-machine",
   },
   {
     name: "Automatic Blow Moulding Machine",
-    path: "/home/p3.png",
+    path: "/home/p3.webp",
     slug: "/automatic-blow-moulding-machine",
   },
   {
     name: "1 Litre Triple Head Double Stage With De-Flashing (Model – FEW1000H)",
-    path: "/home/p4.png",
+    path: "/home/p4.webp",
     slug: "/blow-moulding-machines",
   },
 ];

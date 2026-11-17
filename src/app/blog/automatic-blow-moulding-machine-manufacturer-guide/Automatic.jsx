@@ -91,7 +91,7 @@ export default function BlowMouldingGuidePage() {
         >
           <div className="relative w-full max-w-xl aspect-[4/3]">
             <Image
-              src="/blog/b3.png"
+              src="/blog/b3.webp"
               alt="Automatic Blow Moulding Machine - Faith Engineering Works"
               fill
               priority

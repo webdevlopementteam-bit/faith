@@ -120,7 +120,7 @@ export default function BlogPost() {
             >
               <div className="relative mx-auto aspect-[4/3] w-full max-w-2xl overflow-hidden rounded-[1.5rem] bg-white border border-slate-100 shadow-inner">
                 <Image
-                  src="/blog/b1.png"
+                  src="/blog/b1.webp"
                   alt="Auto Deflashing Blow Moulding Machine - Faith Engineering Works"
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"

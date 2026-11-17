@@ -20,7 +20,7 @@ export default function ExportMapSection() {
             className="relative aspect-[16/9] w-full overflow-hidden"
           >
             <Image
-              src="/global-export/map.png"
+              src="/global-export/map.webp"
               alt="Global Export Network Map"
               fill
               priority

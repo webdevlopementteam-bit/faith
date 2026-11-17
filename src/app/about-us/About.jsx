@@ -28,9 +28,9 @@ export default function AboutSection() {
               <span className="h-1.5 w-1.5 rounded-full bg-[#B8021F]" />
               About Faith Engineering Works
             </span>
-            <h1 className="font-serif text-3xl uppercase leading-tight tracking-wide text-gray-900 sm:text-4xl lg:text-[2.65rem]">
+            <h2 className="font-serif text-3xl uppercase leading-tight tracking-wide text-gray-900 sm:text-4xl lg:text-[2.65rem]">
               A Name Trusted in Blow Moulding Technology
-            </h1>
+            </h2>
             <div className="mt-3 flex items-center gap-4">
               <h2 className="text-3xl font-bold tracking-[0.12em] text-[#B8021F] sm:text-4xl lg:text-5xl">
                 SINCE 2000
@@ -50,7 +50,7 @@ export default function AboutSection() {
               className="relative h-[340px] w-full overflow-hidden shadow-[0_24px_70px_rgba(56,23,25,.20)] sm:h-[440px] lg:absolute lg:inset-0 lg:h-full"
             >
               <Image
-                src="/about/about.png"
+                src="/about/about.webp"
                 alt="Faith Engineering Works Factory"
                 fill
                 className="object-cover object-top transition-transform duration-700 hover:scale-[1.02]"

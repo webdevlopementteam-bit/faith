@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
+import { markEnquirySubmitted, sendToWeb3Forms } from "@/lib/enquiry.js";
 import { z } from "zod";
 import { motion } from "framer-motion";
 import {
@@ -101,27 +102,15 @@ export default function Contact() {
     setSubmitting(true);
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: "12345", // Replace with your Web3Forms access key.
-          subject: `New Contact Form Submission - ${formData.subject}`,
-          from_name: "Faith Engineering Website",
-          name: formData.name,
-          email: formData.email,
-          message: `Mobile: +91${formData.mobile}\nSubject: ${formData.subject}\n\n${formData.message}`,
-        }),
+      await sendToWeb3Forms({
+        subject: `New Contact Form Submission - ${formData.subject}`,
+        from_name: "Faith Engineering Website",
+        name: formData.name,
+        email: formData.email,
+        message: `Mobile: +91${formData.mobile}\nSubject: ${formData.subject}\n\n${formData.message}`,
       });
 
-      const data = await response.json();
-
-      if (!response.ok || !data.success) {
-        throw new Error(data.message || "Unable to send your message.");
-      }
+      markEnquirySubmitted();
 
       // Set the one-time session flag before navigating to the thank-you page.
       sessionStorage.setItem("contactFormSubmitted", "true");
@@ -173,12 +162,12 @@ export default function Contact() {
             We’re Here to Help
           </span>
 
-          <h1 className="mt-5 text-3xl font-bold font-serif tracking-tight text-stone-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-5 text-3xl font-bold font-serif tracking-tight text-stone-900 sm:text-4xl lg:text-5xl">
             Get in Touch{" "}
             <span className="bg-gradient-to-r from-[#AF0020] to-[#7A0016] bg-clip-text text-transparent">
               With Us
             </span>
-          </h1>
+          </h2>
 
           <div className="mx-auto mt-5 flex items-center justify-center gap-1.5">
             <div className="h-1.5 w-3 rounded-full bg-[#AF0020]/30" />

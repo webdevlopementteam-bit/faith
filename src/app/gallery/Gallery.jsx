@@ -17,28 +17,28 @@ const exhibitions = [
     event: "Plast India Exhibition",
     location: "Pragati Maidan, New Delhi",
     folder: "delhi",
-    images: ["d1.png", "d2.png", "d3.png", "d4.png", "d5.png"],
+    images: ["d1.webp", "d2.webp", "d3.webp", "d4.webp", "d5.webp"],
   },
   {
     year: 2026,
     event: "Plast Show Exhibition",
     location: "Surat, Gujarat",
     folder: "gujarat",
-    images: ["g1.png", "g2.png", "g3.png", "g4.png"],
+    images: ["g1.webp", "g2.webp", "g3.webp", "g4.webp"],
   },
   {
     year: 2026,
     event: "Isge",
     location: "Jalandhar, Punjab",
     folder: "punjab",
-    images: ["p1.png", "p2.png", "p3.png", "p4.png", "p5.png"],
+    images: ["p1.webp", "p2.webp", "p3.webp", "p4.webp", "p5.webp"],
   },
   {
     year: 2025,
     event: "Raj Plast",
     location: "Jaipur, Rajasthan",
     folder: "rajasthan",
-    images: ["r1.png", "r2.png", "r3.png", "r4.png"],
+    images: ["r1.webp", "r2.webp", "r3.webp", "r4.webp"],
   },
 ];
 

@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/Breadcrumb";
-import { products } from "@/lib/data.js";
+import { catalogProducts as products } from "@/lib/data.js";
 
 function Products() {
   const [currentPage, setCurrentPage] = useState(1);

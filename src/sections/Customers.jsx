@@ -90,7 +90,7 @@ export default function CustomersAndTestimonials() {
   }, []);
 
   // Repeat the single image 12 times for smooth infinite loop
-  const customerImages = Array(12).fill("/home/customers.png");
+  const customerImages = Array(12).fill("/home/customers.webp");
 
   // Offset the second Swiper by 1.5 seconds (1500ms) so both never move together
   useEffect(() => {

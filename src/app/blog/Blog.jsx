@@ -9,7 +9,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 const blogData = [
   {
     slug: "/auto-deflashing-blow-moulding-machine-manufacturers-suppliers",
-    img: "/blog/b1.png",
+    img: "/blog/b1.webp",
     heading:
       "Buy Auto Deflashing Blow Moulding Machine Manufacturer: A Complete Buyer’s Guide (2026)",
     description:
@@ -18,7 +18,7 @@ const blogData = [
   },
   {
     slug: "/accumulator-blow-moulding-machine-manufacturers-in-delhi-ncr",
-    img: "/blog/b2.png",
+    img: "/blog/b2.webp",
     heading:
       "Best Accumulator Blow Moulding Machine Manufacturers in Delhi NCR – Complete Buying Guide (2026)",
     description:
@@ -27,7 +27,7 @@ const blogData = [
   },
   {
     slug: "/automatic-blow-moulding-machine-manufacturer-guide",
-    img: "/blog/b3.png",
+    img: "/blog/b3.webp",
     heading:
       "Automatic Blow Moulding Machine Manufacturer: The Complete A-to-Z Buying Guide (2026) by Faith Engineering Works",
     description:
@@ -36,7 +36,7 @@ const blogData = [
   },
   {
     slug: "/fully-automatic-blow-moulding-machine-price-in-delhi",
-    img: "/blog/b4.png",
+    img: "/blog/b4.webp",
     heading:
       "Buy Fully Automatic Blow Moulding Machine Price in Delhi: Complete Buyer’s Guide, Comparison & Pricing (2026)",
     description:
@@ -45,7 +45,7 @@ const blogData = [
   },
   {
     slug: "/plastic-and-hdpe-blow-moulding-machine-manufacturer-guide",
-    img: "/blog/b4.png",
+    img: "/blog/b4.webp",
     heading:
       "Buy Plastic & HDPE Blow Moulding Machine Manufacturer in Delhi: Complete Guide by Faith Engineering Works in 2026",
     description:
@@ -54,7 +54,7 @@ const blogData = [
   },
   {
     slug: "/blow-moulding-machine-manufacturer-complete-guide",
-    img: "/blog/b4.png",
+    img: "/blog/b4.webp",
     heading:
       "Top Blow Moulding Machine Manufacturer: The Complete 2026 Buying Guide in 2026",
     description:
@@ -90,9 +90,9 @@ export default function BlogPage() {
               Industry Insights & Guides
             </span>
 
-            <h1 className="mt-3.5 bg-gradient-to-r from-slate-950 via-[#850019] to-[#D20B19] bg-clip-text text-3xl font-black font-serif tracking-tight text-transparent sm:text-4xl lg:text-5xl">
+            <h2 className="mt-3.5 bg-gradient-to-r from-slate-950 via-[#850019] to-[#D20B19] bg-clip-text text-3xl font-black font-serif tracking-tight text-transparent sm:text-4xl lg:text-5xl">
               Latest Machinery Articles & Buying Guides
-            </h1>
+            </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-1.5">
               <span className="h-1.5 w-3 rounded-full bg-[#AF0020]/30" />

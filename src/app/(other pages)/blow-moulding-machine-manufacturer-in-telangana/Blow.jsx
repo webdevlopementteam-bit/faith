@@ -186,7 +186,7 @@ export default function BlowMouldingMachineManufacturerInTelangana() {
           <div className="lg:col-span-6 bg-[#fdeee4]/60 p-4 sm:p-6 rounded-2xl flex items-center justify-center shadow-inner">
             <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[480px]">
               <Image
-                src="/other/b1.png"
+                src="/other/b1.webp"
                 alt="Blow Moulding Machine Manufacturer in Telangana"
                 fill
                 priority

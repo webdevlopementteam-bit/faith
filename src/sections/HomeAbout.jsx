@@ -213,7 +213,7 @@ const AboutSection = () => {
               </div>
 
               <motion.img
-                src="/home/about.png"
+                src="/home/about.webp"
                 alt="About Faith Engineering Works"
                 className="relative z-10 block max-h-[420px] w-full select-none object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.15)] sm:max-h-[500px] lg:max-h-[500px] xl:max-h-[560px]"
               />
@@ -223,9 +223,9 @@ const AboutSection = () => {
           {/* Right Column: Text Content */}
           <div className="text-[#222222] lg:col-span-7 xl:col-span-6">
             <div className="mb-3 overflow-hidden pb-1 lg:mb-4">
-              <h2 className="font-serif text-3xl font-extrabold leading-tight tracking-tight text-[#111111] sm:text-4xl lg:text-[38px] xl:text-[44px]">
+              <h1 className="font-serif text-3xl font-bold leading-tight tracking-tight text-[#111111] md:4xl">
                 About Faith Engineering Works
-              </h2>
+              </h1>
             </div>
 
             {/* Responsive multi-stop accent rule */}
@@ -344,7 +344,7 @@ const AboutSection = () => {
               />
               <motion.img
                 variants={imageZoomVariants}
-                src="/home/p1.png"
+                src="/home/p1.webp"
                 alt="Blow Moulding Machine 1"
                 className="pointer-events-none relative z-10 h-full w-full select-none object-contain drop-shadow-[0_14px_24px_rgba(128,0,24,0.14)]"
               />
@@ -433,7 +433,7 @@ const AboutSection = () => {
               />
               <motion.img
                 variants={imageZoomVariants}
-                src="/home/p2.png"
+                src="/home/p2.webp"
                 alt="Blow Moulding Machine 2"
                 className="pointer-events-none relative z-10 h-full w-full select-none object-contain drop-shadow-[0_14px_24px_rgba(128,0,24,0.14)]"
               />
@@ -458,7 +458,7 @@ const AboutSection = () => {
               />
               <motion.img
                 variants={imageZoomVariants}
-                src="/home/p3.png"
+                src="/home/p3.webp"
                 alt="Blow Moulding Machine 3"
                 className="pointer-events-none relative z-10 h-full w-full select-none object-contain drop-shadow-[0_14px_24px_rgba(128,0,24,0.14)]"
               />
@@ -547,7 +547,7 @@ const AboutSection = () => {
               />
               <motion.img
                 variants={imageZoomVariants}
-                src="/home/p4.png"
+                src="/home/p4.webp"
                 alt="Blow Moulding Machine 4"
                 className="pointer-events-none relative z-10 h-full w-full select-none object-contain drop-shadow-[0_14px_24px_rgba(128,0,24,0.14)]"
               />

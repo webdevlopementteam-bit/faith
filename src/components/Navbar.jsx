@@ -12,10 +12,9 @@ import {
   PackageSearch,
   ArrowRight,
   Sparkles,
-  ChevronDown,
 } from "lucide-react";
 
-import { products } from "@/lib/data.js";
+import { catalogProducts } from "@/lib/data.js";
 
 const navLinks = [
   { name: "HOME", href: "/" },
@@ -98,8 +97,8 @@ function SearchBox({
       ref={searchRef}
       className={
         mobile
-          ? "relative z-30 w-full sm:hidden"
-          : "relative z-30 w-full max-w-[245px] shrink-0"
+          ? "relative z-30 w-full lg:hidden"
+          : "relative z-30 w-full shrink-0"
       }
     >
       <form
@@ -130,7 +129,7 @@ function SearchBox({
           }}
           onFocus={() => setIsSearchFocused(true)}
           placeholder={
-            mobile ? "Search 40+ machines, models..." : "Model, 100ml, head..."
+            mobile ? "Search machines, models..." : "Model, 100ml, head..."
           }
           aria-label="Search machines"
           aria-expanded={showResults}
@@ -307,7 +306,7 @@ function SearchBox({
               onClick={handleLinkClick}
               className="flex items-center justify-between gap-3 rounded-xl bg-gradient-to-r from-[#850019] to-[#D20B19] px-3.5 py-2.5 text-[11px] font-bold text-white shadow-sm transition hover:shadow-md"
             >
-              <span>Explore All 40+ Machines</span>
+              <span>Explore All Machines</span>
               <span className="flex items-center gap-1.5">
                 View Catalog
                 <ArrowRight size={14} />
@@ -328,9 +327,11 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const [isProductHovered, setIsProductHovered] = useState(false);
+  const [isDesktopSearchOpen, setIsDesktopSearchOpen] = useState(false);
 
   const desktopSearchRef = useRef(null);
   const mobileSearchRef = useRef(null);
+  const desktopSearchWrapRef = useRef(null);
 
   const isActiveLink = useCallback(
     (href) => {
@@ -342,7 +343,7 @@ export default function Navbar() {
 
   // 1. Static site optimization: 40 products ke text ko pehle se flat index banana (zero-lag on typing)
   const indexedProducts = useMemo(() => {
-    return (products || []).map((p) => {
+    return catalogProducts.map((p) => {
       const name = p.name?.toLowerCase() || "";
       const category = p.category?.toLowerCase() || "";
       const keywords = (p.seo?.keywords || [])
@@ -412,6 +413,10 @@ export default function Navbar() {
       if (!insideDesktop && !insideMobile) {
         setIsSearchFocused(false);
       }
+
+      if (!desktopSearchWrapRef.current?.contains(event.target)) {
+        setIsDesktopSearchOpen(false);
+      }
     };
 
     document.addEventListener("mousedown", handleOutsideClick);
@@ -427,6 +432,7 @@ export default function Navbar() {
     setIsMenuOpen(false);
     setIsSearchFocused(false);
     setIsProductHovered(false);
+    setIsDesktopSearchOpen(false);
   }, [pathname]);
 
   const searchProps = {
@@ -443,194 +449,230 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[100] w-full bg-white shadow-[0_4px_20px_rgba(80,0,15,0.08)]">
-      <div className="mx-auto w-full max-w-[1900px] px-3 sm:px-1 lg:px-1">
-        <div className="relative flex h-[68px] items-center sm:h-[82px]">
-          {/* Desktop Red Shape */}
-          <div
-            className="absolute inset-y-[7px] right-0 left-[17%] hidden overflow-hidden rounded-r-[13px] bg-gradient-to-r from-[#850019] via-[#B00020] to-[#D20B19] shadow-[0_4px_10px_rgba(117,0,22,0.14)] sm:block sm:left-[18%]"
-            style={{
-              clipPath:
-                "polygon(7% 0, 100% 0, 100% 100%, 0 100%, 1.2% 78%, 3.5% 43%)",
-            }}
-          >
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/30" />
-            <div className="pointer-events-none absolute -right-12 -top-16 h-36 w-64 rounded-full bg-red-400/10 blur-3xl" />
-          </div>
+    <header className="fixed inset-x-0 top-0 z-[100] w-full bg-white shadow-[0_4px_20px_rgba(80,0,15,0.08)] lg:bg-transparent lg:shadow-none">
+      {/* Desktop: floating red bar with white logo panel */}
+      <div className="relative mx-auto hidden h-[67px] w-[91%] lg:block">
+        <div className="absolute inset-x-0 top-0 h-[57px] rounded-b-[14px] bg-gradient-to-r from-[#7D1A2A] via-[#8A1B2C] to-[#AE2720] shadow-[0_6px_18px_rgba(80,0,15,0.18)]" />
 
-          {/* Logo */}
-          <div className="relative z-20 flex h-full w-auto shrink-0 items-center sm:w-[25%] sm:min-w-[170px] lg:w-[26%]">
-            <svg
-              className="pointer-events-none absolute inset-0 hidden h-full w-full sm:block"
-              viewBox="0 0 420 82"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              <path
-                d="M0 0 H420 C390 8 370 20 350 36 C326 55 310 72 278 80 Q267 82 252 82 H0 Z"
-                fill="#FFFFFF"
-              />
-            </svg>
+        {/* White strip along the top edge */}
+        <div className="absolute left-[24px] right-0 top-0 h-[10.5px] bg-white" />
 
-            <Link
-              href="/"
-              aria-label="Go to homepage"
-              onClick={handleLinkClick}
-              className="relative z-10 flex h-[54px] w-[54px] shrink-0 items-center justify-center transition-transform duration-300 hover:scale-105 sm:absolute sm:left-[29%] sm:top-1/2 sm:h-[70px] sm:w-[70px] sm:-translate-y-1/2 lg:left-[30%]"
-            >
-              <Image
-                src="/logo/logo.png"
-                alt="Company Logo"
-                width={70}
-                height={70}
-                priority
-                className="h-full w-full object-contain"
-              />
-            </Link>
-          </div>
+        {/* White logo panel with curved edge */}
+        <svg
+          className="pointer-events-none absolute left-[24px] top-0 h-[67px] w-[clamp(200px,20.4vw,300px)] drop-shadow-[0_4px_8px_rgba(80,0,15,0.12)]"
+          viewBox="0 0 300 64"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M0 0 H300 V10.5 H292 C278 10.5 268 14 256 23 C241 35 233 45 222 51 C208 59 199 64 180 64 H15 Q0 64 0 49 Z"
+            fill="#FFFFFF"
+          />
+        </svg>
 
-          {/* Nav Links and Search */}
-          <div className="relative z-10 ml-auto hidden min-w-0 flex-1 items-center justify-end gap-2 pl-1 pr-2 sm:flex lg:gap-3 lg:pl-2 lg:pr-4">
-            <nav className="flex min-w-0 flex-1 items-center justify-evenly gap-0 xl:gap-1 2xl:gap-2">
-              {navLinks.map((link) => {
-                const active = isActiveLink(link.href);
+        <Link
+          href="/"
+          aria-label="Go to homepage"
+          onClick={handleLinkClick}
+          className="absolute left-[clamp(58px,6.05vw,89px)] top-[2px] z-10 h-[72px] w-[72px] transition-transform duration-300 hover:scale-105"
+        >
+          <Image
+            src="/logo/logo.webp"
+            alt="Company Logo"
+            width={72}
+            height={72}
+            priority
+            className="h-full w-full object-contain"
+          />
+        </Link>
 
-                if (link.hasDropdown) {
-                  return (
-                    <div
-                      key={link.href}
-                      className="relative flex items-center py-5"
-                      onMouseEnter={() => setIsProductHovered(true)}
-                      onMouseLeave={() => setIsProductHovered(false)}
+        {/* Nav links, search and enquiry */}
+        <div className="absolute right-[clamp(20px,4.5vw,66px)] top-[15px] left-[calc(clamp(200px,20.4vw,300px)+15px)] z-10 flex h-[44px] items-center justify-between gap-6">
+          <nav className="flex min-w-0 max-w-[740px] flex-1 items-center justify-between gap-2">
+            {navLinks.map((link) => {
+              const active = isActiveLink(link.href);
+
+              if (link.hasDropdown) {
+                return (
+                  <div
+                    key={link.href}
+                    className="relative flex items-center py-3"
+                    onMouseEnter={() => setIsProductHovered(true)}
+                    onMouseLeave={() => setIsProductHovered(false)}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={handleLinkClick}
+                      aria-current={active ? "page" : undefined}
+                      className={`group relative flex items-center whitespace-nowrap py-1 text-[clamp(11px,1.02vw,15px)] font-medium leading-none tracking-[0.01em] transition-colors duration-300 ${
+                        active
+                          ? "text-[#F8D5C5]"
+                          : "text-white hover:text-[#F8D5C5]"
+                      }`}
                     >
-                      <Link
-                        href={link.href}
-                        onClick={handleLinkClick}
-                        aria-current={active ? "page" : undefined}
-                        className={`group relative flex items-center gap-1 whitespace-nowrap px-[2px] py-3 text-[8px] font-bold tracking-[-0.04em] transition-colors duration-300 min-[850px]:text-[9px] md:px-[3px] lg:px-1 lg:text-[10px] lg:tracking-normal xl:px-1.5 xl:text-[11px] 2xl:text-[13px] ${
-                          active
-                            ? "text-white"
-                            : "text-white/90 hover:text-[#FFD7DB]"
+                      {link.name}
+                      <span
+                        className={`absolute bottom-[1px] left-0 h-[2px] bg-[#F8D5C5] transition-all duration-300 ${
+                          active ? "w-full" : "w-0 group-hover:w-full"
                         }`}
-                      >
-                        {link.name}
-                        <ChevronDown
-                          size={13}
-                          className={`transition-transform duration-200 ${
-                            isProductHovered ? "rotate-180" : ""
-                          }`}
-                        />
-                        <span
-                          className={`absolute bottom-[4px] left-1/2 h-[2px] -translate-x-1/2 rounded-full bg-[#FFD9DC] transition-all duration-300 ${
-                            active
-                              ? "w-[calc(100%-4px)]"
-                              : "w-0 group-hover:w-[calc(100%-4px)]"
-                          }`}
-                        />
-                      </Link>
+                      />
+                    </Link>
 
-                      {/* Mega Dropdown for Products */}
-                      {isProductHovered && (
-                        <div className="absolute left-1/2 top-[calc(100%-6px)] z-[150] w-[min(1200px,92vw)] -translate-x-1/2 overflow-hidden rounded-2xl border border-gray-100 bg-white text-gray-900 shadow-[0_25px_60px_rgba(65,0,15,0.22)]">
-                          <div className="flex items-center justify-between border-b border-red-50 bg-gradient-to-r from-[#FFF5F5] via-white to-[#FFF5F5] px-5 py-3">
-                            <div className="flex items-center gap-2">
-                              <PackageSearch
-                                size={18}
-                                className="text-[#B00020]"
-                              />
-                              <span className="text-xs font-extrabold uppercase tracking-wider text-gray-900">
-                                All Blow Moulding Machines
-                              </span>
-                            </div>
-                            <Link
-                              href="/products"
-                              onClick={handleLinkClick}
-                              className="flex items-center gap-1 text-[11px] font-bold text-[#A4001D] hover:underline"
-                            >
-                              View Entire Catalog
-                              <ArrowRight size={13} />
-                            </Link>
+                    {/* Mega Dropdown for Products */}
+                    {isProductHovered && (
+                      <div className="absolute left-1/2 top-full z-[150] w-[min(1200px,92vw)] -translate-x-1/2 overflow-hidden rounded-2xl border border-gray-100 bg-white text-gray-900 shadow-[0_25px_60px_rgba(65,0,15,0.22)]">
+                        <div className="flex items-center justify-between border-b border-red-50 bg-gradient-to-r from-[#FFF5F5] via-white to-[#FFF5F5] px-5 py-3">
+                          <div className="flex items-center gap-2">
+                            <PackageSearch
+                              size={18}
+                              className="text-[#B00020]"
+                            />
+                            <span className="text-xs font-extrabold uppercase tracking-wider text-gray-900">
+                              All Blow Moulding Machines
+                            </span>
                           </div>
+                          <Link
+                            href="/products"
+                            onClick={handleLinkClick}
+                            className="flex items-center gap-1 text-[11px] font-bold text-[#A4001D] hover:underline"
+                          >
+                            View Entire Catalog
+                            <ArrowRight size={13} />
+                          </Link>
+                        </div>
 
-                          <div className="max-h-[62vh] overflow-y-auto overscroll-contain p-4">
-                            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-                              {products.map((product) => {
-                                const imgSrc = getProductImage(product);
-                                return (
-                                  <Link
-                                    key={product.slug}
-                                    href={getProductHref(product)}
-                                    onClick={handleLinkClick}
-                                    className="group flex items-center gap-2.5 rounded-xl border border-gray-100 bg-gray-50/50 p-2 transition-all duration-200 hover:border-red-100 hover:bg-[#FFF8F8] hover:shadow-sm"
-                                  >
-                                    <div className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-gray-200/80 bg-white p-1">
-                                      {imgSrc ? (
-                                        <Image
-                                          src={imgSrc}
-                                          alt={product.name}
-                                          fill
-                                          sizes="48px"
-                                          className="object-contain transition-transform duration-300 group-hover:scale-110"
-                                        />
-                                      ) : (
-                                        <PackageSearch
-                                          size={20}
-                                          className="text-[#A4001D]/40"
-                                        />
-                                      )}
-                                    </div>
-                                    <div className="min-w-0 flex-1">
-                                      <p className="line-clamp-2 text-[11px] font-bold leading-4 text-gray-800 transition-colors group-hover:text-[#A4001D]">
-                                        {product.name}
-                                      </p>
-                                    </div>
-                                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-white text-gray-400 transition group-hover:bg-[#A4001D] group-hover:text-white">
-                                      <ArrowUpRight size={14} />
-                                    </div>
-                                  </Link>
-                                );
-                              })}
-                            </div>
+                        <div className="max-h-[62vh] overflow-y-auto overscroll-contain p-4">
+                          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+                            {catalogProducts.map((product) => {
+                              const imgSrc = getProductImage(product);
+                              return (
+                                <Link
+                                  key={product.slug}
+                                  href={getProductHref(product)}
+                                  onClick={handleLinkClick}
+                                  className="group flex items-center gap-2.5 rounded-xl border border-gray-100 bg-gray-50/50 p-2 transition-all duration-200 hover:border-red-100 hover:bg-[#FFF8F8] hover:shadow-sm"
+                                >
+                                  <div className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-gray-200/80 bg-white p-1">
+                                    {imgSrc ? (
+                                      <Image
+                                        src={imgSrc}
+                                        alt={product.name}
+                                        fill
+                                        sizes="48px"
+                                        className="object-contain transition-transform duration-300 group-hover:scale-110"
+                                      />
+                                    ) : (
+                                      <PackageSearch
+                                        size={20}
+                                        className="text-[#A4001D]/40"
+                                      />
+                                    )}
+                                  </div>
+                                  <div className="min-w-0 flex-1">
+                                    <p className="line-clamp-2 text-[11px] font-bold leading-4 text-gray-800 transition-colors group-hover:text-[#A4001D]">
+                                      {product.name}
+                                    </p>
+                                  </div>
+                                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-white text-gray-400 transition group-hover:bg-[#A4001D] group-hover:text-white">
+                                    <ArrowUpRight size={14} />
+                                  </div>
+                                </Link>
+                              );
+                            })}
                           </div>
                         </div>
-                      )}
-                    </div>
-                  );
-                }
-
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={handleLinkClick}
-                    aria-current={active ? "page" : undefined}
-                    className={`group relative whitespace-nowrap px-[2px] py-3 text-[8px] font-bold tracking-[-0.04em] transition-colors duration-300 min-[850px]:text-[9px] md:px-[3px] lg:px-1 lg:text-[10px] lg:tracking-normal xl:px-1.5 xl:text-[11px] 2xl:text-[13px] ${
-                      active
-                        ? "text-white"
-                        : "text-white/90 hover:text-[#FFD7DB]"
-                    }`}
-                  >
-                    {link.name}
-
-                    <span
-                      className={`absolute bottom-[4px] left-1/2 h-[2px] -translate-x-1/2 rounded-full bg-[#FFD9DC] transition-all duration-300 ${
-                        active
-                          ? "w-[calc(100%-4px)]"
-                          : "w-0 group-hover:w-[calc(100%-4px)]"
-                      }`}
-                    />
-                  </Link>
+                      </div>
+                    )}
+                  </div>
                 );
-              })}
-            </nav>
+              }
 
-            <div className="w-[145px] shrink-0 min-[850px]:w-[165px] lg:w-[185px] xl:w-[220px]">
-              <SearchBox {...searchProps} />
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={handleLinkClick}
+                  aria-current={active ? "page" : undefined}
+                  className={`group relative whitespace-nowrap py-1 text-[clamp(11px,1.02vw,15px)] font-medium leading-none tracking-[0.01em] transition-colors duration-300 ${
+                    active
+                      ? "text-[#F8D5C5]"
+                      : "text-white hover:text-[#F8D5C5]"
+                  }`}
+                >
+                  {link.name}
+
+                  <span
+                    className={`absolute bottom-[1px] left-0 h-[2px] bg-[#F8D5C5] transition-all duration-300 ${
+                      active ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
+                  />
+                </Link>
+              );
+            })}
+          </nav>
+
+          <div className="flex shrink-0 items-center gap-4">
+            <div ref={desktopSearchWrapRef} className="relative">
+              <button
+                type="button"
+                onClick={() => {
+                  setIsDesktopSearchOpen((open) => !open);
+                  requestAnimationFrame(() => {
+                    desktopSearchRef.current?.querySelector("input")?.focus();
+                  });
+                }}
+                aria-label={
+                  isDesktopSearchOpen ? "Close search" : "Open search"
+                }
+                aria-expanded={isDesktopSearchOpen}
+                className="flex h-9 w-9 items-center justify-center rounded-full text-white transition-colors hover:bg-white/10 hover:text-[#F8D5C5]"
+              >
+                {isDesktopSearchOpen ? (
+                  <X size={20} strokeWidth={2} />
+                ) : (
+                  <Search size={20} strokeWidth={2} />
+                )}
+              </button>
+
+              {isDesktopSearchOpen && (
+                <div className="absolute right-0 top-[calc(100%+12px)] z-[140] w-[300px] rounded-2xl bg-gradient-to-r from-[#7D1A2A] to-[#AE2720] p-2 shadow-[0_15px_40px_rgba(65,0,15,0.25)]">
+                  <SearchBox {...searchProps} />
+                </div>
+              )}
             </div>
+
+            <Link
+              href="/contact-us"
+              onClick={handleLinkClick}
+              className="flex h-[34px] items-center whitespace-nowrap rounded-[5px] bg-[#EBC4C6] px-[clamp(12px,1.36vw,20px)] text-[clamp(11px,1.02vw,15px)] font-medium tracking-[0.01em] text-[#1A1A1A] transition-colors hover:bg-white"
+            >
+              ENQUIRY NOW
+            </Link>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile / tablet bar */}
+      <div className="mx-auto w-full px-3 sm:px-5 lg:hidden">
+        <div className="relative flex h-[68px] items-center">
+          <Link
+            href="/"
+            aria-label="Go to homepage"
+            onClick={handleLinkClick}
+            className="relative z-10 flex h-[54px] w-[54px] shrink-0 items-center justify-center"
+          >
+            <Image
+              src="/logo/logo.webp"
+              alt="Company Logo"
+              width={54}
+              height={54}
+              priority
+              className="h-full w-full object-contain"
+            />
+          </Link>
 
           {/* Mobile Hamburger */}
-          <div className="ml-auto flex shrink-0 items-center sm:hidden">
+          <div className="ml-auto flex shrink-0 items-center lg:hidden">
             <button
               type="button"
               onClick={() => {
@@ -652,7 +694,7 @@ export default function Navbar() {
 
         {/* Mobile Dropdown */}
         <div
-          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out sm:hidden ${
+          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out lg:hidden ${
             isMenuOpen
               ? "grid-rows-[1fr] opacity-100"
               : "grid-rows-[0fr] opacity-0"
@@ -700,7 +742,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#EAB7BB]/60 to-transparent" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#EAB7BB]/60 to-transparent lg:hidden" />
     </header>
   );
 }

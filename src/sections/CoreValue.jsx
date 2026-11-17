@@ -15,7 +15,7 @@ const leftValues = [
     title: "Global Presence",
     description:
       "Serving clients across India and international markets with reliable and efficient machinery solutions.",
-    icon: "/icons/Global Presence.png",
+    icon: "/icons/Global Presence.webp",
   },
   {
     title: "Service & Support",
@@ -111,7 +111,7 @@ export default function CoreValues() {
       style={{
         backgroundImage: `
           linear-gradient(165deg, rgba(212, 20, 66, 0.78) 0%, rgba(158, 19, 68, 0.45) 48%, rgba(20, 15, 20, 0.25) 350%),
-          url('/home/bg.jpg')
+          url('/home/bg.webp')
         `,
       }}
     >
@@ -154,7 +154,7 @@ export default function CoreValues() {
           >
             <div className="relative w-[170px] sm:w-[185px] md:w-[205px] drop-shadow-2xl">
               <Image
-                src="/home/core-values.png"
+                src="/home/core-values.webp"
                 alt="Core Values Mobile Preview"
                 width={240}
                 height={480}

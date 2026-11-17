@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-[90vh] sm:h-[60vh] md:h-[70vh] lg:h-[70vh] xl:h-[90vh] overflow-hidden flex items-center justify-center">
+    <section className="relative w-full lg:-mt-[67px] h-[90vh] sm:h-[60vh] md:h-[70vh] lg:h-[70vh] xl:h-[90vh] overflow-hidden flex items-center justify-center">
       {/* Desktop Video */}
       <video
         className="hidden md:block absolute top-0 left-0 w-full h-full object-cover z-0"

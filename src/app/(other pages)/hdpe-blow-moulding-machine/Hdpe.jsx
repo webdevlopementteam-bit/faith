@@ -170,7 +170,7 @@ export default function HdpeBlowMoldingPage() {
           <div className="lg:col-span-6 bg-[#fdeee4]/60 p-2 sm:p-6 rounded-2xl flex items-center justify-center shadow-inner">
             <div className="relative w-full h-[250px] sm:h-[420px] lg:h-[460px]">
               <Image
-                src="/other/h1.png"
+                src="/other/h1.webp"
                 alt="HDPE Blow Molding Machine"
                 fill
                 sizes="100vw"

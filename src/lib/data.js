@@ -1,4 +1,3 @@
-
 export const products = [
   {
     slug: "/auto-deflashing-blow-moulding-machine-manufacturer-in-telangana/",
@@ -16,7 +15,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/a1.png", "/products/p1.png"],
+    images: ["/products/a1.webp", "/products/p1.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -399,7 +398,7 @@ export const products = [
 
     category: "Blow Moulding Machines",
     images: [
-      "/products/Automatic Blow Moulding Machine Manufacturer in Jharkhand.png",
+      "/products/Automatic Blow Moulding Machine Manufacturer in Jharkhand.webp",
     ],
     data: {
       // Top right side content (image ke right side wala section)
@@ -718,8 +717,8 @@ export const products = [
     },
     category: "Blow Moulding Machines",
     images: [
-      "/products/Auto deflashing Blow Moulding Machine Manufacturer in Uttar Pradesh.png",
-      "/products/p1.png",
+      "/products/Auto deflashing Blow Moulding Machine Manufacturer in Uttar Pradesh.webp",
+      "/products/p1.webp",
     ],
     data: {
       // Top right side content (image ke right side wala section)
@@ -1133,7 +1132,7 @@ export const products = [
     },
     category: "Blow Moulding Machines",
     images: [
-      "/products/Automatic Blow moulding Machine Manufacturer in Uttrakhand.png",
+      "/products/Automatic Blow moulding Machine Manufacturer in Uttrakhand.webp",
     ],
     data: {
       // Top right side content (image ke right side wala section)
@@ -1521,7 +1520,7 @@ export const products = [
     },
     category: "Blow Moulding Machines",
     images: [
-      "/products/Automatic Blow Moulding Machine Manufacturer in Telangana.png",
+      "/products/Automatic Blow moulding Machine Manufacturer in Telangana.webp",
     ],
     data: {
       // Top right side content
@@ -1894,7 +1893,7 @@ export const products = [
     },
     category: "Blow Moulding Machines",
     images: [
-      "/products/Automatic Blow Moulding Machine Manufacturer In Uttar Pradesh.png",
+      "/products/Automatic Blow Moulding Machine Manufacturer In Uttar Pradesh.webp",
     ],
     data: {
       // Top right side content
@@ -2249,7 +2248,7 @@ export const products = [
     },
     category: "Blow Moulding Machines",
     images: [
-      "/products/Plastic Blow Moulding Machine Manufacturer in Uttarakhand.png",
+      "/products/Plastic Blow Moulding Machine Manufacturer in Uttarakhand.webp",
     ],
     data: {
       // Top right side content
@@ -2549,7 +2548,7 @@ export const products = [
     },
     category: "Blow Moulding Machines",
     images: [
-      "/products/Plastic Blow Moulding Machine Manufacturer in Punjab.png",
+      "/products/Plastic Blow Moulding Machine Manufacturer in Punjab.webp",
     ],
     data: {
       // Top right side content
@@ -2835,7 +2834,7 @@ export const products = [
     },
     category: "Blow Moulding Machines",
     images: [
-      "/products/Plastic Blow Moulding Machine Manufacturer in Jharkhand.png",
+      "/products/Plastic Blow Moulding Machine Manufacturer in Jharkhand.webp",
     ],
     data: {
       // Top right side content
@@ -3130,7 +3129,7 @@ export const products = [
     },
     category: "Blow Moulding Machines",
     images: [
-      "/products/Plastic Blow Moulding Machine Manufacturer in Telangana.png",
+      "/products/Plastic Blow Moulding Machine Manufacturer in Telangana.webp",
     ],
     data: {
       // Top right side content
@@ -3424,7 +3423,7 @@ export const products = [
     },
     category: "Blow Moulding Machines",
     images: [
-      "/products/Plastic Blow Moulding Machine Manufacturer in Uttar Pradesh.png",
+      "/products/Plastic Blow Moulding Machine Manufacturer in Uttar Pradesh.webp",
     ],
     data: {
       // Top right side content
@@ -3722,7 +3721,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s1.png", "/products/p1.png"],
+    images: ["/products/s1.webp", "/products/p1.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -3802,7 +3801,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s2.png", "/products/p2.png"],
+    images: ["/products/s2.webp", "/products/p2.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -3884,7 +3883,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s3.png", "/products/p3.png"],
+    images: ["/products/s3.webp", "/products/p3.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -3965,7 +3964,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s4.png", "/products/p4.png"],
+    images: ["/products/s4.webp", "/products/p4.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -4045,7 +4044,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s5.png", "/products/p5.png"],
+    images: ["/products/s5.webp", "/products/p5.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -4125,7 +4124,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s6.png", "/products/p6.png"],
+    images: ["/products/s6.webp", "/products/p6.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -4206,7 +4205,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s7.png", "/products/p7.png"],
+    images: ["/products/s7.webp", "/products/p7.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -4287,7 +4286,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s8.png"],
+    images: ["/products/s8.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -4320,7 +4319,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s9.png"],
+    images: ["/products/s9.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -4356,7 +4355,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s10.png", "/products/p8.png"],
+    images: ["/products/s10.webp", "/products/p8.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -4437,7 +4436,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s11.png", "/products/p11.png"],
+    images: ["/products/s11.webp", "/products/p11.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -4484,7 +4483,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s12.png", "/products/p9.png"],
+    images: ["/products/s12.webp", "/products/p9.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -4564,7 +4563,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s13.png"],
+    images: ["/products/s13.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -4613,7 +4612,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s14.png", "/products/p10.png"],
+    images: ["/products/s14.webp", "/products/p10.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -4962,7 +4961,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s15.png", "/products/p1.png"],
+    images: ["/products/s15.webp", "/products/p1.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -5337,7 +5336,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s16.png"],
+    images: ["/products/s16.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -5384,7 +5383,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s17.png"],
+    images: ["/products/s17.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -5661,7 +5660,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s18.png"],
+    images: ["/products/s18.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -5708,7 +5707,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s19.png"],
+    images: ["/products/s19.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -5755,7 +5754,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s20.png"],
+    images: ["/products/s20.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -6016,7 +6015,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s21.png"],
+    images: ["/products/s21.webp"],
     data: {
       // Top right side content
       sideContent: [
@@ -6062,7 +6061,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s22.png", "/products/p11.png"],
+    images: ["/products/s22.webp", "/products/p11.webp"],
     data: {
       sideContent: [
         {
@@ -6103,7 +6102,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s23.png"],
+    images: ["/products/s23.webp"],
     data: {
       sideContent: [
         {
@@ -6144,7 +6143,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s24.png"],
+    images: ["/products/s24.webp"],
     data: {
       sideContent: [
         {
@@ -6187,7 +6186,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s25.png"],
+    images: ["/products/s25.webp"],
     data: {
       sideContent: [
         {
@@ -6489,7 +6488,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s26.png"],
+    images: ["/products/s26.webp"],
     data: {
       sideContent: [
         {
@@ -6533,7 +6532,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s27.png"],
+    images: ["/products/s27.webp"],
     data: {
       sideContent: [
         {
@@ -6577,7 +6576,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s28.png"],
+    images: ["/products/s28.webp"],
     data: {
       sideContent: [
         {
@@ -6621,7 +6620,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s29.png"],
+    images: ["/products/s29.webp"],
     data: {
       sideContent: [
         {
@@ -6666,7 +6665,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s30.png"],
+    images: ["/products/s30.webp"],
     data: {
       sideContent: [
         {
@@ -6978,7 +6977,7 @@ export const products = [
       },
     },
     category: "Blow Moulding Machines",
-    images: ["/products/s31.png"],
+    images: ["/products/s31.webp"],
     data: {
       sideContent: [
         {
@@ -7018,7 +7017,7 @@ export const productsgrid = [
         "Auto deflashing Blow Moulding Machine Manufacturer in Uttar Pradesh",
       description:
         "1 Litre Triple Head Single Stage With Auto De-Flashing (Model – FEW1000H) This is one of the superior quality FEW1000H Blow Moulding Machine in the industry. As a prominent Manufacturer, Exporter and Supplier of the Auto Deflashing Blow Moulding Machine Manufacturer in Uttar Pradesh, we ensure to provide machines with best technical specifications, Not just this, Blow Moulding Machines provided by us is also available at market competitive prices.",
-      images: ["/products/s1.png", "/products/s2.png"],
+      images: ["/products/s1.webp", "/products/s2.webp"],
       tables: [
         {
           title: "SPECIFICATION DATA",
@@ -7084,3 +7083,15 @@ export const productsgrid = [
     },
   ],
 ];
+
+// Location landing products (name ends with "in <place>", e.g. "... in Punjab",
+// or slug ends with "-in-<place>") stay live on their own URLs but are hidden
+// from the catalog listing and the navbar dropdown and search.
+const LOCATION_NAME_SUFFIX = /\sin\s+[a-z][a-z .-]*$/i;
+const LOCATION_SLUG_SUFFIX = /-in-[a-z-]+\/?$/i;
+
+export const catalogProducts = products.filter(
+  (product) =>
+    !LOCATION_NAME_SUFFIX.test((product.name || "").trim()) &&
+    !LOCATION_SLUG_SUFFIX.test(product.slug || ""),
+);
