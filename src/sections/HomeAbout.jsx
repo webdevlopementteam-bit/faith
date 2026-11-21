@@ -224,7 +224,7 @@ const AboutSection = () => {
           <div className="text-[#222222] lg:col-span-7 xl:col-span-6">
             <div className="mb-3 overflow-hidden pb-1 lg:mb-4">
               <h1 className="font-serif text-3xl font-bold leading-tight tracking-tight text-[#111111] md:4xl">
-                About Faith Engineering Works
+                Best Blow Moulding Machine Manufacturer in India
               </h1>
             </div>
 
