@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { products } from "@/lib/data.js";
 import ProductDetailView from "@/components/ProductDetailView";
+import CategoryPageView from "@/components/CategoryPageView";
 
 const SITE_URL = "https://www.blowmouldmachinemanufacturer.com";
 
@@ -81,13 +82,60 @@ export async function generateMetadata({ params }) {
   };
 }
 
+// FAQPage schema from any "faq" block in the product's description
+const getFaqSchema = (product) => {
+  const blocks = Array.isArray(product?.data?.descriptionData)
+    ? product.data.descriptionData
+    : [];
+  const items = blocks
+    .filter((block) => block?.type === "faq" && Array.isArray(block.items))
+    .flatMap((block) => block.items)
+    .filter((faq) => faq?.question && faq?.answer);
+
+  if (items.length === 0) return null;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((faq) => ({
+      "@type": "Question",
+      name: String(faq.question)
+        .replace(/^Q\d+\.\s*/i, "")
+        .trim(),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: String(faq.answer).trim(),
+      },
+    })),
+  };
+};
+
 async function ProductContent({ paramsPromise }) {
   const resolvedParams = await paramsPromise;
   const product = getProductBySlug(resolvedParams?.slug);
 
   if (!product) notFound();
 
-  return <ProductDetailView product={product} />;
+  const faqSchema = getFaqSchema(product);
+
+  return (
+    <>
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD schema
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+          }}
+        />
+      )}
+      {product.pageType === "category" ? (
+        <CategoryPageView product={product} allProducts={products} />
+      ) : (
+        <ProductDetailView product={product} />
+      )}
+    </>
+  );
 }
 
 export default function ProductPage({ params }) {

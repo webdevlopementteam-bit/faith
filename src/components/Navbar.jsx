@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 
 import { catalogProducts } from "@/lib/data.js";
+import EnquiryButton from "@/components/EnquiryButton";
 
 const navLinks = [
   { name: "HOME", href: "/" },
@@ -641,13 +642,12 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link
-              href="/contact-us"
+            <EnquiryButton
               onClick={handleLinkClick}
               className="flex h-[34px] items-center whitespace-nowrap rounded-[5px] bg-[#EBC4C6] px-[clamp(12px,1.36vw,20px)] text-[clamp(11px,1.02vw,15px)] font-medium tracking-[0.01em] text-[#1A1A1A] transition-colors hover:bg-white"
             >
               ENQUIRY NOW
-            </Link>
+            </EnquiryButton>
           </div>
         </div>
       </div>

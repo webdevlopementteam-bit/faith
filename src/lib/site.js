@@ -95,7 +95,7 @@ export const servicePages = [
     description: "In-house manufacturing from Bawana Industrial Area, Delhi.",
   },
   {
-    path: "/blow-moulding-machine-manufacturer-in-jharkhand/",
+    path: "/jharkhand/",
     title: "Blow Moulding Machine Manufacturer in Jharkhand",
     description: "Serving Ranchi, Jamshedpur & beyond.",
   },

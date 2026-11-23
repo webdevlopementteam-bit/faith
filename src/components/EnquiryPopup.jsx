@@ -17,6 +17,12 @@ const FIRST_DELAY_MS = 8000;
 const REPEAT_DELAY_MS = 15000;
 const MAX_CLOSES = 2;
 
+export const OPEN_ENQUIRY_EVENT = "open-enquiry-popup";
+
+// Call from any button to open the enquiry popup.
+export const openEnquiryPopup = () =>
+  window.dispatchEvent(new Event(OPEN_ENQUIRY_EVENT));
+
 // Pages that already have a form or confirm a submission.
 const HIDDEN_ON = ["/contact-us", "/thank-you"];
 
@@ -75,16 +81,35 @@ export default function EnquiryPopup() {
     return () => clearTimeout(timerRef.current);
   }, [schedule]);
 
+  // Buttons (Enquiry Now, Get Quotation) open the popup on demand.
+  const [isManualOpen, setIsManualOpen] = useState(false);
+
+  useEffect(() => {
+    const open = () => {
+      clearTimeout(timerRef.current);
+      setIsManualOpen(true);
+    };
+    window.addEventListener(OPEN_ENQUIRY_EVENT, open);
+    return () => window.removeEventListener(OPEN_ENQUIRY_EVENT, open);
+  }, []);
+
   const currentPath = (pathname || "/").replace(/\/+$/, "") || "/";
 
   // Re-check storage so an enquiry sent from the contact page also stops it.
   const isOpen =
-    isDue &&
-    !isDone &&
-    !HIDDEN_ON.includes(currentPath) &&
-    !readPopupState().submitted;
+    isManualOpen ||
+    (isDue &&
+      !isDone &&
+      !HIDDEN_ON.includes(currentPath) &&
+      !readPopupState().submitted);
 
   const handleClose = useCallback(() => {
+    // A popup the visitor asked for doesn't count toward the auto-popup limit.
+    if (isManualOpen) {
+      setIsManualOpen(false);
+      return;
+    }
+
     setIsDue(false);
 
     const { closeCount } = recordPopupClose();
@@ -95,7 +120,7 @@ export default function EnquiryPopup() {
     }
 
     schedule(REPEAT_DELAY_MS);
-  }, [schedule]);
+  }, [schedule, isManualOpen]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -163,6 +188,7 @@ export default function EnquiryPopup() {
       });
 
       markEnquirySubmitted();
+      setIsManualOpen(false);
       setIsDone(true);
 
       sessionStorage.setItem("contactFormSubmitted", "true");

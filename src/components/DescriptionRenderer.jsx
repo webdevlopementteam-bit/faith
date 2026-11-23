@@ -11,12 +11,13 @@ const scrollAnimation = {
   transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
 };
 
-export default function DescriptionRenderer({ blocks = [] }) {
+export default function DescriptionRenderer({ blocks = [], showHeader = true }) {
   if (!Array.isArray(blocks) || blocks.length === 0) return null;
 
   return (
     <div className="space-y-7 text-[16px] leading-7 text-gray-700 sm:space-y-8 sm:text-[17px] sm:leading-8">
       {/* Beautiful Top Description Heading */}
+      {showHeader && (
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -38,6 +39,7 @@ export default function DescriptionRenderer({ blocks = [] }) {
           className="mt-2.5 h-1 rounded-full bg-gradient-to-r from-[#850019] to-[#D20B19]"
         />
       </motion.div>
+      )}
 
       {blocks.map((block, idx) => {
         if (!block) return null;

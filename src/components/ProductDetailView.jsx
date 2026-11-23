@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ProductGallery } from "@/components/ProductGallery";
 import DescriptionRenderer from "@/components/DescriptionRenderer";
+import EnquiryButton from "@/components/EnquiryButton";
 import { CheckCircle2, ShieldCheck, Wrench, PhoneCall } from "lucide-react";
 import * as motion from "framer-motion/client";
 
@@ -35,7 +36,10 @@ export default function ProductDetailView({ product }) {
           className="w-full lg:sticky lg:top-28"
         >
           <div className="rounded-3xl border border-gray-100 bg-gradient-to-b from-gray-50/70 to-white p-3 shadow-[0_8px_30px_rgb(0,0,0,0.04)] sm:p-4">
-            <ProductGallery images={productImages} />
+            <ProductGallery
+              images={productImages}
+              alt={product.name || "Blow moulding machine"}
+            />
           </div>
 
           {/* Quick Industrial Trust Badges */}
@@ -236,13 +240,10 @@ export default function ProductDetailView({ product }) {
                   Talk directly with our engineering team for technical quotes.
                 </p>
               </div>
-              <Link
-                href="/contact-us"
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r font-serif from-[#850019] to-[#D20B19] px-4 py-2.5 text-xs font-bold text-white shadow-sm transition hover:shadow-md active:scale-95 sm:text-sm"
-              >
+              <EnquiryButton className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r font-serif from-[#850019] to-[#D20B19] px-4 py-2.5 text-xs font-bold text-white shadow-sm transition hover:shadow-md active:scale-95 sm:text-sm">
                 <PhoneCall size={16} />
                 Get Quotation
-              </Link>
+              </EnquiryButton>
             </div>
           </motion.div>
         </motion.div>

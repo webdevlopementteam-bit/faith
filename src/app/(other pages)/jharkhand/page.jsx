@@ -5,11 +5,11 @@ export const metadata = {
   title: "Top Blow Moulding Machine Manufacturer in Jharkhand",
   description:
     "Faith Engineering Works — blow moulding machine manufacturer in Jharkhand, serving Ranchi, Jamshedpur & beyond. Contact Us Today!",
-  keywords: ["", ""],
+  keywords: ["Blow Moulding Machine Manufacturer in Jharkhand"],
 
   alternates: {
     canonical:
-      "https://www.blowmouldmachinemanufacturer.com/blow-moulding-machine-manufacturer-in-jharkhand/",
+      "https://www.blowmouldmachinemanufacturer.com/jharkhand/",
   },
 };
 

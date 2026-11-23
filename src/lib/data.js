@@ -3869,7 +3869,7 @@ export const products = [
     },
   },
   {
-    slug: "/signal-head-single-stage-model-few1000h/",
+    slug: "/500-ml-single-head-single-stage-model-few1000h/",
     name: "500 Ml Single Head Single Stage (Model – FEW1000H)",
     seo: {
       title:
@@ -3879,7 +3879,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/products/signal-head-single-stage-model-few1000h/",
+          "https://www.blowmouldmachinemanufacturer.com/products/500-ml-single-head-single-stage-model-few1000h/",
       },
     },
     category: "Blow Moulding Machines",
@@ -4273,7 +4273,7 @@ export const products = [
     },
   },
   {
-    slug: "2ltr-triple-head-double-station-with-auto-de-flashing-system/",
+    slug: "1-litre-triple-head-double-stage-with-auto-de-flashing-system/",
     name: "1 Litre Triple Head Double Stage With Auto De-Flashing System",
     seo: {
       title:
@@ -4282,7 +4282,7 @@ export const products = [
       keywords: ["", ""],
       alternates: {
         canonical:
-          "https://www.blowmouldmachinemanufacturer.com/products/2ltr-triple-head-double-station-with-auto-de-flashing-system/",
+          "https://www.blowmouldmachinemanufacturer.com/products/1-litre-triple-head-double-stage-with-auto-de-flashing-system/",
       },
     },
     category: "Blow Moulding Machines",
@@ -4602,10 +4602,13 @@ export const products = [
     name: "Accumulator Blow Moulding Machine Manufacturer",
     // SEO optional hai. Koi field omit ya khaali string ho sakti hai.
     seo: {
-      title: "Top Accumulator Blow Moulding Machine Manufacturer",
+      title: "Best Accumulator Blow Moulding Machine Manufacturer in India",
       description:
-        "Accumulator blow moulding machines for large containers & drums, built in-house since 2000. Consistent wall thickness, 10L capacity. Delhi manufacturer.",
-      keywords: ["", ""],
+        "Looking for an Accumulator Blow Moulding Machine Manufacturer in India? Faith Engineering Works offers reliable machines for large-capacity plastic container production. Contact us today!",
+      keywords: [
+        "Accumulator Blow Moulding Machine Manufacturer",
+        "Accumulator Blow Moulding Machine Manufacturer in India",
+      ],
       alternates: {
         canonical:
           "https://www.blowmouldmachinemanufacturer.com/products/accumulator-blow-moulding-machine-manufacturer/",
@@ -6178,8 +6181,11 @@ export const products = [
       title:
         "Best Automatic Blow Moulding Machine Manufacturer | Faith Engineering Works",
       description:
-        "Faith Engineering Works — automatic blow moulding machine manufacturer since 2000. Auto De-Flashing, Single/Double/Triple Head, 100ml-10L capacity. Contact Us Today!",
-      keywords: ["", ""],
+        "Looking for the Best Automatic Blow Moulding Machine Manufacturer in India? Faith Engineering Works offers reliable machines with 50 ml to 20 L capacity. Get a quote today!",
+      keywords: [
+        "Automatic Blow Moulding Machine Manufacturer",
+        "Best Automatic Blow Moulding Machine Manufacturer in Delhi",
+      ],
       alternates: {
         canonical:
           "https://www.blowmouldmachinemanufacturer.com/products/automatic-blow-moulding-machine-manufacturer/",
@@ -6653,11 +6659,27 @@ export const products = [
   {
     slug: "/plastic-blow-moulding-machine/",
     name: "Plastic Blow Moulding Machine Manufacturer",
+    // Category layout: banner H1 + model grid + content (see CategoryPageView)
+    pageType: "category",
+    // Hidden from catalog, navbar and search; reachable only by its URL
+    hidden: true,
+    h1: "Best Plastic Blow Moulding Machine Manufacturer in Delhi NCR, India",
+    modelSlugs: [
+      "signal-head-double-stage-model-few2000h",
+      "500-ml-single-head-single-stage-model-few1000h",
+      "signal-head-single-stage-model-few500h",
+      "signal-head-double-stage-model-few250h",
+      "signal-head-single-stage-model-few250h",
+      "2ltr-single-head-single-station-with-v-strip-system",
+      "1-litre-triple-head-double-stage-with-auto-de-flashing-system",
+      "250ml-single-head-single-station",
+      "5ltr-single-head-single-station",
+    ],
     seo: {
       title:
-        "Best Plastic Blow Moulding Machine Manufacturer in delhi | Faith Engineering Works",
+        "Best Plastic Blow Moulding Machine Manufacturer in Delhi | Faith Engineering Works",
       description:
-        "Faith Engineering Works is a trusted plastic blow moulding machine manufacturer in delhi since 2000. Single, double head & double stage machines, 250ml-10L. Get In Touch!",
+        "Looking for a Plastic Blow Moulding Machine Manufacturer in Delhi NCR, India? Faith Engineering Works offers machines ranging from 50 ml to 20 L, with single-, double-, or triple-head options. Contact us today!",
       keywords: ["", ""],
       alternates: {
         canonical:
@@ -6667,296 +6689,316 @@ export const products = [
     category: "Blow Moulding Machines",
     images: ["/products/s30.webp"],
     data: {
-      sideContent: [
-        {
-          type: "p",
-          segments: [
-            {
-              text: "The 1L Single Stage Single Head ",
-            },
-            {
-              type: "link",
-              text: "Plastic Blow Molding Machine Manufacturer in delhi",
-              href: "/",
-            },
-            {
-              text: " with V-Strip is designed for efficient production of 1-liter plastic containers. Featuring a single head and a straightforward single-stage process, it ensures rapid heating and precise molding, resulting in high-quality containers with uniform wall thickness. The V-Strip technology enhances the sealing capabilities, providing improved container strength and durability. This machine is user-friendly, energy-efficient, and minimizes material waste, making it suitable for various industries, including food and beverage, cosmetics, and pharmaceuticals. Its robust construction guarantees long-term reliability and consistent performance in high-volume production.",
-            },
-          ],
-        },
-        {
-          type: "table",
-          title: "",
-          headers: [],
-          rows: [
-            ["Container Volume", "Up to 1 L"],
-            ["Process Type", "Blow"],
-            ["Cavity Count", "Single Cavity"],
-            ["Automation Grade", "Automatic"],
-            ["Material", "HDPE"],
-            ["Mould Thickness", "200 mm"],
-            ["Warranty", "1 Year"],
-            ["Plastic Processed", "HDPE, LDPE, PPE etc"],
-          ],
-        },
-      ],
+      sideContent: [],
       descriptionData: [
         {
           type: "h2",
           content:
-            "Best Plastic Blow Moulding Machine Manufacturer in Delhi — Faith Engineering Works",
+            "Plastic Blow Moulding Machines for Industrial Bottle and Container Manufacturing",
+        },
+        {
+          type: "p",
+          segments: [
+            { text: "Faith Engineering Works is an experienced " },
+            {
+              type: "link",
+              text: "Plastic Blow Moulding Machine Manufacturer",
+              href: "/about-us/",
+            },
+            {
+              text: " based in Delhi, India. Established in 2000, we design and manufacture reliable plastic blow moulding machines for producing bottles, jars, cans, and other hollow plastic containers. Our machine range includes single head, double head, and double stage models with capacities ranging from 50 ml to 20 litres, depending on the machine configuration.",
+            },
+          ],
+        },
+        {
+          type: "p",
+          segments: [
+            { text: "Designed to support different production requirements, our " },
+            { text: "Plastic Blow Moulding Machines", bold: true },
+            {
+              text: " are suitable for manufacturers looking for consistent output, efficient operations, and practical production solutions. Whether you are setting up a new manufacturing unit or expanding an existing facility, Faith Engineering Works offers machine solutions according to your product specifications and production needs.",
+            },
+          ],
+        },
+        { type: "h2", content: "What Are Plastic Blow Moulding Machines?" },
+        {
+          type: "p",
+          content:
+            "Plastic Blow Moulding Machines are industrial machines used to manufacture hollow plastic products such as bottles, containers, jars, and cans. They work by heating plastic material and shaping it inside a mould using compressed air.",
+        },
+        {
+          type: "p",
+          content:
+            "The blow moulding process generally involves the following steps:",
+        },
+        {
+          type: "list",
+          ordered: true,
+          items: [
+            "<strong>Plastic Material Feeding:</strong> Plastic raw materials such as HDPE and PP are fed into the machine.",
+            "<strong>Heating and Melting:</strong> The plastic material is heated until it reaches the required molten condition.",
+            "<strong>Parison Formation:</strong> The molten plastic is formed into a hollow tube known as a parison.",
+            "<strong>Moulding Process:</strong> The parison is positioned inside a mould, and compressed air expands the plastic against the mould walls.",
+            "<strong>Cooling and Product Removal:</strong> The plastic takes the shape of the mould, cools down, and is removed as a finished product.",
+          ],
+        },
+        {
+          type: "p",
+          content:
+            "This process allows manufacturers to produce plastic containers in different shapes, sizes, and capacities for various industrial applications.",
+        },
+        {
+          type: "h2",
+          content: "Types of Plastic Blow Moulding Machines We Offer",
+        },
+        {
+          type: "p",
+          content:
+            "Different manufacturing businesses have different production requirements. Faith Engineering Works offers different machine configurations to support varying output capacities and product specifications.",
+        },
+        { type: "h3", content: "1. Single Head Blow Moulding Machine" },
+        {
+          type: "p",
+          content:
+            "A Single Head Blow Moulding Machine is suitable for manufacturing plastic bottles and containers where production requirements can be managed through a single moulding head. It is a practical option for small and medium-scale manufacturing units.",
+        },
+        {
+          type: "p",
+          content:
+            "These machines can be used for producing different types of plastic containers, depending on the mould design and machine capacity.",
+        },
+        { type: "h3", content: "2. Double Head Blow Moulding Machine" },
+        {
+          type: "p",
+          content:
+            "A Double Head Blow Moulding Machine is designed with two moulding heads to support higher production requirements. It can help manufacturers improve production capacity and manage larger orders more efficiently.",
+        },
+        {
+          type: "p",
+          content:
+            "It is suitable for businesses looking to increase their manufacturing output while maintaining consistent product quality.",
+        },
+        { type: "h3", content: "3. Double Stage Blow Moulding Machine" },
+        {
+          type: "p",
+          content:
+            "Double Stage Blow Moulding Machines are designed for specific production configurations where the process involves separate stages. These machines can be considered by manufacturers looking for suitable solutions for their required container sizes, designs, and production volumes.",
+        },
+        {
+          type: "p",
+          content:
+            "The right machine configuration depends on the product specifications, material, and manufacturing requirements.",
+        },
+        {
+          type: "h2",
+          content: "Applications of Plastic Blow Moulding Machines",
+        },
+        {
+          type: "p",
+          content:
+            "Plastic blow moulding technology is widely used across industries that require hollow plastic packaging and storage products.",
+        },
+        { type: "p", content: "Our machines can be used for manufacturing:" },
+        {
+          type: "list",
+          ordered: false,
+          items: [
+            "<strong>Plastic Packaging Bottles:</strong> Bottles for FMCG, cosmetics, and personal care products.",
+            "<strong>Chemical Containers:</strong> Plastic containers for chemicals and industrial liquids.",
+            "<strong>Edible Oil Bottles:</strong> Containers used for packaging edible oils and other liquid products.",
+            "<strong>Detergent Bottles:</strong> Plastic bottles for liquid detergents, cleaners, and household products.",
+            "<strong>Pharmaceutical Containers:</strong> Suitable plastic packaging containers for pharmaceutical applications, depending on material and product requirements.",
+            "<strong>Industrial Cans and Jars:</strong> Hollow plastic containers used for different industrial and commercial purposes.",
+          ],
+        },
+        {
+          type: "p",
+          content:
+            "The final product shape, size, and capacity depend on the mould design and machine configuration.",
+        },
+        {
+          type: "h2",
+          content: "Key Features of Our Plastic Blow Moulding Machines",
+        },
+        {
+          type: "p",
+          content:
+            "Choosing the right machinery is important for maintaining production efficiency and product consistency. Faith Engineering Works focuses on manufacturing machines that address practical industrial requirements.",
+        },
+        {
+          type: "p",
+          content: "Some important features and capabilities include:",
+        },
+        {
+          type: "list",
+          ordered: false,
+          items: [
+            "<strong>Multiple Machine Configurations:</strong> Single head, double head, and double stage machine options.",
+            "<strong>Different Production Capacities:</strong> Machine solutions for container sizes ranging from 50 ml to 20 litres, depending on the model.",
+            "<strong>Product Customisation:</strong> Machine selection according to bottle shape, size, and mould requirements.",
+            "<strong>Industrial Applications:</strong> Suitable for manufacturing different types of hollow plastic products.",
+            "<strong>Production Flexibility:</strong> Options to match different production volumes and business requirements.",
+            "<strong>Manufacturer Support:</strong> Direct assistance for machine selection, installation guidance, and technical requirements.",
+          ],
+        },
+        {
+          type: "h2",
+          content:
+            "Why Choose Faith Engineering Works for Plastic Blow Moulding Machines?",
+        },
+        {
+          type: "p",
+          content:
+            "Selecting the right manufacturer is as important as selecting the right machine. Faith Engineering Works has been involved in machine manufacturing since 2000 and understands the practical requirements of plastic product manufacturers.",
+        },
+        {
+          type: "p",
+          content: "Here is why businesses can consider our machines:",
+        },
+        { type: "h3", content: "25+ Years of Manufacturing Experience" },
+        {
+          type: "p",
+          content:
+            "With manufacturing experience dating back to 2000, we understand different industrial production requirements and machine configurations.",
+        },
+        { type: "h3", content: "Wide Range of Machine Options" },
+        {
+          type: "p",
+          content:
+            "We offer single head, double head, and double stage blow moulding machines to accommodate different manufacturing needs.",
+        },
+        { type: "h3", content: "Capacity-Based Solutions" },
+        {
+          type: "p",
+          content:
+            "Our machine range covers different container capacities, from small bottles to larger industrial containers, depending on the selected model.",
+        },
+        { type: "h3", content: "Customised Machine Requirements" },
+        {
+          type: "p",
+          content:
+            "We understand that every business may require different bottle shapes, mould designs, and production capacities. Our team helps identify suitable machine configurations according to these requirements.",
+        },
+        { type: "h3", content: "Direct Manufacturer Assistance" },
+        {
+          type: "p",
+          content:
+            "Being a manufacturer based in Delhi, India, we provide direct communication and technical assistance to customers regarding machine selection and related requirements.",
+        },
+        {
+          type: "h2",
+          content: "How to Choose the Right Plastic Blow Moulding Machine?",
+        },
+        {
+          type: "p",
+          content:
+            "Before purchasing a Plastic Blow Moulding Machine, manufacturers should evaluate a few important factors to ensure the selected machine matches their production requirements.",
+        },
+        {
+          type: "list",
+          ordered: true,
+          items: [
+            "<strong>Container Capacity:</strong> Determine whether you need to manufacture small bottles, medium-sized containers, or large plastic cans. Choose a machine that supports your required capacity.",
+            "<strong>Production Requirements:</strong> Consider your daily production targets and select a suitable single head, double head, or double stage configuration.",
+            "<strong>Plastic Material:</strong> Check whether the machine is compatible with the raw material you intend to process, such as HDPE or PP.",
+            "<strong>Bottle Design and Mould:</strong> Consider the shape, dimensions, neck design, and weight of the final plastic product before selecting a machine.",
+            "<strong>Technical Support:</strong> Choose a manufacturer that can assist with machine selection, installation guidance, and technical requirements.",
+          ],
+        },
+        {
+          type: "p",
+          content:
+            "Evaluating these factors can help you select a suitable machine for your manufacturing unit and avoid unnecessary production limitations.",
+        },
+        {
+          type: "h2",
+          content: "Get the Right Plastic Blow Moulding Machine for Your Business",
+        },
+        {
+          type: "p",
+          segments: [
+            { text: "Looking for reliable " },
+            { text: "Plastic Blow Moulding Machines", bold: true },
+            {
+              text: " for your manufacturing unit? Faith Engineering Works offers different machine configurations designed to meet varied industrial production requirements. With 25+ years of manufacturing experience, we help businesses identify suitable machinery based on container capacity, product design, and production needs.",
+            },
+          ],
         },
         {
           type: "p",
           segments: [
             {
-              text: "Faith Engineering Works is a trusted ",
-            },
-            {
               type: "link",
-              text: "plastic blow moulding machine manufacturer",
+              text: "Contact Faith Engineering Works today",
               href: "/contact-us",
             },
             {
-              text: " based in Delhi, India, making machines since the year 2000. We design and build single head, double head, and double stage blow moulding machines with capacities ranging from 250ml to 10 litres, used to produce plastic bottles, jars, containers, and cans for industries across India and overseas.",
+              text: " to discuss your requirements and explore suitable plastic blow moulding machine solutions for your business.",
             },
           ],
         },
-        {
-          type: "p",
-          segments: [
-            {
-              text: "If you are searching for a reliable plastic blow moulding machine manufacturer in delhi, this page will help you understand what these machines do, why Faith Engineering Works is a strong choice, and how to pick the right machine for your business.",
-            },
-          ],
-        },
-        {
-          type: "h3",
-          content: "What Is a Plastic Blow Moulding Machine?",
-        },
-        {
-          type: "p",
-          segments: [
-            {
-              text: "A plastic blow moulding machine manufacturer is used to make hollow plastic products like bottles, cans, jars, and containers. The process is simple to understand:",
-            },
-          ],
-        },
-        {
-          type: "list",
-          ordered: true,
-          items: [
-            "Plastic granules (like HDPE or PP) are melted inside the machine.",
-            "The melted plastic is pushed out as a hollow tube, called a parison.",
-            "This tube is placed inside a mould, and air is blown into it.",
-            "The air pushes the plastic against the mould walls, giving it the exact shape of a bottle or container.",
-            "The plastic cools down, the mould opens, and the finished product comes out.",
-          ],
-        },
-        {
-          type: "p",
-          segments: [
-            {
-              text: "This entire process takes only a few seconds, which is why a good blow moulding machine can produce hundreds of bottles every hour.",
-            },
-          ],
-        },
-        {
-          type: "h3",
-          content:
-            "Why Choose Faith Engineering Works as Your Blow Moulding Machine Manufacturer",
-        },
-        {
-          type: "p",
-          segments: [
-            {
-              text: "Most manufacturers only talk about “quality” and “trust” without backing it up. Here is what actually makes ",
-            },
-            {
-              type: "link",
-              text: "Faith Engineering Works",
-              href: "/",
-            },
-            {
-              text: " different:",
-            },
-          ],
-        },
-        {
-          type: "list",
-          ordered: true,
-          items: [
-            "25+ Years of Real Manufacturing Experience Since 2000, we have been designing and manufacturing blow moulding machines from our own facility in Bawana Industrial Area, Delhi. This is not outsourced or trading business — we manufacture our machines ourselves, which means better quality control and faster after-sales support.",
-            "Wide Capacity Range We manufacture machines that can produce containers starting from 250ml all the way up to 10 litres, covering small cosmetic bottles to large industrial containers.",
-            "Multiple Machine Types",
-          ],
-        },
-        {
-          type: "list",
-          ordered: false,
-          items: [
-            "Single Head Blow Moulding Machines — ideal for small and medium businesses starting production",
-            "Double Head Blow Moulding Machines — for higher output and faster production cycles",
-            "Double Stage Blow Moulding Machines — built for continuous, high-volume manufacturing",
-          ],
-        },
-        {
-          type: "list",
-          ordered: true,
-          items: [
-            "Custom Solutions Every business has different bottle shapes, sizes, and output needs. We build machines according to your specific product requirements instead of forcing you into a fixed model.",
-            "Direct Factory Support Because we manufacture in-house, you get direct access to our engineering team for installation help, spare parts, and troubleshooting — not a middleman.",
-          ],
-        },
-        {
-          type: "h3",
-          content: "Industries We Serve",
-        },
-        {
-          type: "p",
-          segments: [
-            {
-              text: "Our plastic blow moulding machines are used by businesses that manufacture:",
-            },
-          ],
-        },
-        {
-          type: "list",
-          ordered: false,
-          items: [
-            "Packaging bottles and containers (FMCG, cosmetics, pharma)",
-            "Edible oil and lubricant containers",
-            "Chemical and detergent bottles",
-            "Water and beverage bottles",
-            "Industrial cans and jars",
-          ],
-        },
-        {
-          type: "h3",
-          content:
-            "What Makes Faith Engineering Works Different From Other Manufacturers",
-        },
-        {
-          type: "p",
-          segments: [
-            {
-              text: "Many plastic blow moulding machine manufacturers in delhi offer similar-looking machines, but the real difference shows up in three areas:",
-            },
-          ],
-        },
-        {
-          type: "list",
-          ordered: false,
-          items: [
-            "Machine reliability over long production runs — our machines are built for daily industrial use, not just demo output.",
-            "Support after the sale — a machine is only as good as the support behind it. Our team helps with setup, operator guidance, and spare parts availability.",
-            "Transparent communication — we work directly with clients to understand their product (bottle shape, capacity, output speed) before recommending a machine, instead of pushing one standard model to everyone.",
-          ],
-        },
-        {
-          type: "h3",
-          content: "How to Choose the Right Blow Moulding Machine",
-        },
-        {
-          type: "p",
-          segments: [
-            {
-              text: "If you are buying a plastic blow moulding machine manufacturer in delhi for the first time, keep these points in mind:",
-            },
-          ],
-        },
-        {
-          type: "list",
-          ordered: true,
-          items: [
-            "Bottle/container size – Match the machine capacity (ml to litres) to your actual product size.",
-            "Production speed needed – Single head machines suit lower volume; double head or double stage machines suit higher volume.",
-            "Material type – Confirm the machine supports the plastic material you plan to use (HDPE, PP, PVC, etc.)",
-            "After-sales support – Choose a manufacturer who offers installation help and spare parts, not just a one-time sale.",
-            "Customisation ability – Your bottle design may change in future; pick a manufacturer who can adjust machines to new moulds.",
-          ],
-        },
-        {
-          type: "p",
-          segments: [
-            {
-              text: "Faith Engineering Works helps you evaluate all these factors before you invest, so you get a machine that actually fits your production needs — not just the cheapest option.",
-            },
-          ],
-        },
-        {
-          type: "h3",
-          content: "Get in Touch",
-        },
-        {
-          type: "p",
-          segments: [
-            {
-              text: "Looking for a dependable ",
-            },
-            {
-              type: "link",
-              text: "plastic blow moulding machine manufacturer",
-              href: "/contact-us",
-            },
-            {
-              text: " for your business? Faith Engineering Works offers machines built for real industrial output, backed by 25+ years of manufacturing experience and direct factory support. Contact us today to discuss your requirement and get the right machine recommendation for your product.",
-            },
-          ],
-        },
-        {
-          type: "h3",
-          content: "Frequently Asked Questions",
-        },
+        { type: "h2", content: "FAQs" },
         {
           type: "faq",
           items: [
             {
-              question: "Q1. What is a plastic blow moulding machine used for?",
+              question:
+                "Who is the best Plastic Blow Moulding Machine Manufacturer in India?",
               answer:
-                "A plastic blow moulding machine is used to manufacture hollow plastic products such as bottles, jars, cans, and containers. It melts plastic, shapes it into a tube, and blows air into a mould to form the final product.",
+                "Faith Engineering Works is a Delhi-based manufacturer offering single head, double head, and double stage plastic blow moulding machines for different industrial requirements.",
+            },
+            {
+              question: "What is a Plastic Blow Moulding Machine used for?",
+              answer:
+                "A Plastic Blow Moulding Machine is used to manufacture hollow plastic products such as bottles, jars, cans, and containers for packaging and industrial applications.",
             },
             {
               question:
-                "Q2. What size bottles can Faith Engineering Works’ machines produce?",
+                "What types of Plastic Blow Moulding Machines are available?",
               answer:
-                "Faith Engineering Works manufactures blow moulding machines that produce containers ranging from 250ml to 10 litres, covering small bottles as well as larger industrial containers.",
+                "Common types include single head, double head, and double stage blow moulding machines. Each type serves different production requirements and output capacities.",
             },
             {
               question:
-                "Q3. What is the difference between single head and double head blow moulding machines?",
+                "What is the production capacity of a Plastic Blow Moulding Machine?",
               answer:
-                "A single head machine produces one bottle at a time and suits smaller production needs. A double head machine produces two bottles per cycle, giving higher output for businesses with larger order volumes.",
+                "Production capacity depends on the machine model, mould design, container size, and number of heads. Faith Engineering Works offers machines for container capacities ranging from 50 ml to 20 litres, depending on the model.",
             },
             {
               question:
-                "Q4. Which materials can be used in a plastic blow moulding machine?",
+                "Which raw materials are used in plastic blow moulding machines?",
               answer:
-                "Most blow moulding machines, including those made by Faith Engineering Works, can process materials like HDPE, PP, and PVC, depending on the machine configuration and mould design.",
+                "Commonly used materials include HDPE, PP, and other suitable thermoplastics. Material selection depends on the final product and its intended application.",
             },
             {
               question:
-                "Q5. How long does Faith Engineering Works take to manufacture and deliver a machine?",
+                "What is the difference between single head and double head blow moulding machines?",
               answer:
-                "Delivery timelines depend on the machine type and level of customisation required. Contact our team directly with your specifications to get an accurate manufacturing and delivery timeline.",
+                "A single head machine uses one moulding head, whereas a double head machine uses two heads to support higher production requirements. The actual output depends on the machine configuration and product specifications.",
             },
             {
               question:
-                "Q6. Does Faith Engineering Works provide after-sales support?",
+                "How much does a Plastic Blow Moulding Machine cost in India?",
               answer:
-                "Yes. Since machines are manufactured in-house at our Delhi facility, our team provides direct support for installation, operator guidance, and spare parts after purchase.",
+                "The price depends on machine type, production capacity, automation level, mould requirements, and technical specifications. Contact the manufacturer for a quotation based on your requirements.",
             },
             {
               question:
-                "Q7. Can the machine be customised for a specific bottle shape or design?",
+                "How do I choose the right Plastic Blow Moulding Machine for my business?",
               answer:
-                "Yes. Faith Engineering Works builds machines and moulds based on your specific product requirements rather than offering only fixed, standard models.",
+                "Consider container capacity, production volume, raw material, bottle design, mould requirements, and available technical support before selecting a machine.",
             },
             {
               question:
-                "Q8. Is Faith Engineering Works suitable for both small businesses and large-scale manufacturers?",
+                "Can Plastic Blow Moulding Machines manufacture bottles of different shapes and sizes?",
               answer:
-                "Yes. With single head machines for smaller operations and double head or double stage machines for high-volume production, Faith Engineering Works serves businesses of different sizes and output needs.",
+                "Yes, these machines can manufacture bottles and containers in different shapes and sizes by using suitable moulds and compatible machine configurations.",
+            },
+            {
+              question:
+                "Where can I buy Plastic Blow Moulding Machines in Delhi NCR?",
+              answer:
+                "You can contact Faith Engineering Works, a plastic blow moulding machine manufacturer based in Delhi, India, to explore suitable machine options for your production requirements.",
             },
           ],
         },
@@ -7092,6 +7134,7 @@ const LOCATION_SLUG_SUFFIX = /-in-[a-z-]+\/?$/i;
 
 export const catalogProducts = products.filter(
   (product) =>
+    !product.hidden &&
     !LOCATION_NAME_SUFFIX.test((product.name || "").trim()) &&
     !LOCATION_SLUG_SUFFIX.test(product.slug || ""),
 );

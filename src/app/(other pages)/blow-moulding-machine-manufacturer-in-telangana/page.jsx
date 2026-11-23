@@ -5,7 +5,10 @@ export const metadata = {
   title: "Best Blow Moulding Machine Manufacturer in Telangana",
   description:
     "Faith Engineering Works — blow moulding machine manufacturer in Telangana, serving Hyderabad & beyond since 2000. Contact Us Today!",
-  keywords: ["", ""],
+  keywords: [
+    "Blow Moulding Machine Manufacturer in Telangana",
+    "Blow Moulding Machine Manufacturer in Hyderabad",
+  ],
 
   alternates: {
     canonical:

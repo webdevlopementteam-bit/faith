@@ -12,6 +12,7 @@ function ZoomableImage({
   onPrev,
   hasMultiple,
   onOpenModal,
+  alt,
 }) {
   const [isZoomed, setIsZoomed] = useState(false);
   const [zoomOrigin, setZoomOrigin] = useState("center center");
@@ -86,7 +87,7 @@ function ZoomableImage({
           >
             <Image
               src={src}
-              alt={`Product preview ${index + 1}`}
+              alt={index === 0 ? alt : `${alt} - image ${index + 1}`}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-contain"
@@ -139,7 +140,7 @@ function ZoomableImage({
   );
 }
 
-export function ProductGallery({ images = [] }) {
+export function ProductGallery({ images = [], alt = "Blow moulding machine" }) {
   const safeImages =
     Array.isArray(images) && images.length > 0
       ? images
@@ -180,6 +181,7 @@ export function ProductGallery({ images = [] }) {
           onPrev={previousImage}
           hasMultiple={safeImages.length > 1}
           onOpenModal={() => setIsModalOpen(true)}
+          alt={alt}
         />
 
         {safeImages.length > 1 && (
@@ -210,7 +212,7 @@ export function ProductGallery({ images = [] }) {
               >
                 <Image
                   src={image}
-                  alt={`Thumbnail ${index + 1}`}
+                  alt={`${alt} - thumbnail ${index + 1}`}
                   fill
                   sizes="80px"
                   className="object-contain"
@@ -253,7 +255,7 @@ export function ProductGallery({ images = [] }) {
               <div className="relative h-[70vh] w-[70vw] min-w-[320px]">
                 <Image
                   src={safeImages[activeIndex]}
-                  alt="Full view"
+                  alt={`${alt} - full view`}
                   fill
                   sizes="100vw"
                   className="object-contain"

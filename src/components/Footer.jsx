@@ -150,7 +150,7 @@ export default function Footer() {
                 },
                 {
                   name: "1 Litre Triple Head Double Stage With Auto De-Flashing System",
-                  href: "/products/2ltr-triple-head-double-station-with-auto-de-flashing-system",
+                  href: "/products/1-litre-triple-head-double-stage-with-auto-de-flashing-system/",
                 },
               ].map((product, idx) => (
                 <li key={idx}>

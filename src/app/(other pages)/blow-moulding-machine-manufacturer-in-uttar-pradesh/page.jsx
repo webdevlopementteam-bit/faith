@@ -5,7 +5,11 @@ export const metadata = {
   title: "Best Blow Moulding Machine Manufacturer in Uttar Pradesh",
   description:
     "Faith Engineering Works supplies blow moulding machines across Uttar Pradesh, including Noida & Meerut, with fast delivery. Contact Us Today.",
-  keywords: ["", ""],
+  keywords: [
+    "Blow Moulding Machine Manufacturer in Uttar Pradesh",
+    "Blow Moulding Machine Manufacturer in Noida",
+    "Blow Moulding Machine Manufacturer in Meerut",
+  ],
 
   alternates: {
     canonical:
