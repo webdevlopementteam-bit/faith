@@ -6,16 +6,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Mail, MessageSquare, Phone, Send, User, X } from "lucide-react";
 import { z } from "zod";
 import {
+  hasPopupShownThisSession,
   markEnquirySubmitted,
-  readPopupState,
-  recordPopupClose,
+  markPopupShown,
   sendToWeb3Forms,
 } from "@/lib/enquiry.js";
 import { company } from "@/lib/site.js";
 
-const FIRST_DELAY_MS = 8000;
-const REPEAT_DELAY_MS = 15000;
-const MAX_CLOSES = 2;
+// Auto popup: 5s after the first page load, once per browser tab session.
+const AUTO_OPEN_DELAY_MS = 5000;
 
 export const OPEN_ENQUIRY_EVENT = "open-enquiry-popup";
 
@@ -56,7 +55,6 @@ export default function EnquiryPopup() {
   const router = useRouter();
 
   const [isDue, setIsDue] = useState(false);
-  const [isDone, setIsDone] = useState(true);
   const [formData, setFormData] = useState(initialForm);
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
@@ -66,20 +64,15 @@ export default function EnquiryPopup() {
   const dialogRef = useRef(null);
   const botcheckRef = useRef(null);
 
-  const schedule = useCallback((delay) => {
-    clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(() => setIsDue(true), delay);
-  }, []);
-
+  // Whichever page the visitor lands on, open once after 5s. The flag lives in
+  // sessionStorage, so it stays shown-once while the tab is open (navigation and
+  // reloads included) and resets when the tab is closed and the site reopened.
   useEffect(() => {
-    const { closeCount, submitted } = readPopupState();
-    if (submitted || closeCount >= MAX_CLOSES) return;
+    if (hasPopupShownThisSession()) return;
 
-    setIsDone(false);
-    schedule(closeCount === 0 ? FIRST_DELAY_MS : REPEAT_DELAY_MS);
-
+    timerRef.current = setTimeout(() => setIsDue(true), AUTO_OPEN_DELAY_MS);
     return () => clearTimeout(timerRef.current);
-  }, [schedule]);
+  }, []);
 
   // Buttons (Enquiry Now, Get Quotation) open the popup on demand.
   const [isManualOpen, setIsManualOpen] = useState(false);
@@ -95,32 +88,19 @@ export default function EnquiryPopup() {
 
   const currentPath = (pathname || "/").replace(/\/+$/, "") || "/";
 
-  // Re-check storage so an enquiry sent from the contact page also stops it.
+  // If the 5s pass on the contact/thank-you page, it opens on the next page.
   const isOpen =
-    isManualOpen ||
-    (isDue &&
-      !isDone &&
-      !HIDDEN_ON.includes(currentPath) &&
-      !readPopupState().submitted);
+    isManualOpen || (isDue && !HIDDEN_ON.includes(currentPath));
+
+  // Count it as shown for this session only once the visitor actually sees it.
+  useEffect(() => {
+    if (isOpen) markPopupShown();
+  }, [isOpen]);
 
   const handleClose = useCallback(() => {
-    // A popup the visitor asked for doesn't count toward the auto-popup limit.
-    if (isManualOpen) {
-      setIsManualOpen(false);
-      return;
-    }
-
+    setIsManualOpen(false);
     setIsDue(false);
-
-    const { closeCount } = recordPopupClose();
-
-    if (closeCount >= MAX_CLOSES) {
-      setIsDone(true);
-      return;
-    }
-
-    schedule(REPEAT_DELAY_MS);
-  }, [schedule, isManualOpen]);
+  }, []);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -189,7 +169,7 @@ export default function EnquiryPopup() {
 
       markEnquirySubmitted();
       setIsManualOpen(false);
-      setIsDone(true);
+      setIsDue(false);
 
       sessionStorage.setItem("contactFormSubmitted", "true");
       router.push("/thank-you");

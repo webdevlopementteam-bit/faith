@@ -20,37 +20,27 @@ export async function sendToWeb3Forms(fields) {
   return data;
 }
 
-// Popup visibility is remembered per browser: shown after 8s, again 15s after
-// the first close, and never after the second close or any submitted enquiry.
-const POPUP_STORAGE_KEY = "enquiryPopup";
+// The auto popup shows once per tab session. sessionStorage survives page
+// navigation and reloads, and is cleared when the tab is closed.
+const POPUP_SESSION_KEY = "enquiryPopupShown";
 
-export function readPopupState() {
+export function hasPopupShownThisSession() {
   try {
-    const saved = JSON.parse(localStorage.getItem(POPUP_STORAGE_KEY) || "{}");
-    return {
-      closeCount: Number(saved.closeCount) || 0,
-      submitted: saved.submitted === true,
-    };
+    return sessionStorage.getItem(POPUP_SESSION_KEY) === "true";
   } catch {
-    return { closeCount: 0, submitted: false };
+    return false;
   }
 }
 
-function writePopupState(state) {
+export function markPopupShown() {
   try {
-    localStorage.setItem(POPUP_STORAGE_KEY, JSON.stringify(state));
+    sessionStorage.setItem(POPUP_SESSION_KEY, "true");
   } catch {
     // Storage can be blocked (private mode); the popup then just won't persist.
   }
 }
 
-export function recordPopupClose() {
-  const state = readPopupState();
-  const next = { ...state, closeCount: state.closeCount + 1 };
-  writePopupState(next);
-  return next;
-}
-
+// An enquiry sent from the contact page also stops the popup for this session.
 export function markEnquirySubmitted() {
-  writePopupState({ ...readPopupState(), submitted: true });
+  markPopupShown();
 }
